@@ -1,0 +1,196 @@
+{% extends 'templates/tabcontents/contactinfoApp.twig' %}
+{% block wrap %}
+    <body id="content">
+        <div id="wrap">
+            <div class="main content">
+                <div class="row list"> 
+                    <div class="list h1">
+                        <h1>{{auth.user.firstname}}</h1>
+                    </div>
+                </div>
+                <div class="row" id="profile">
+                    <ul class="nav nav-tabs" role="tablist" id="profile-tabs">
+                        <li>
+                             <a href="{{ path_for('overview')}}">Overview</a>
+                        </li>
+                        <li class="dropdown" id="settings">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Settings <span class="caret"></span></a>
+                            <ul class="dropdown-menu" id="settings-menu">
+                                <li id="details-menu">
+                                    <a href="{{ path_for('overview')}}">Details</a>
+                                </li>
+                                <li id="users-menu">
+                                    <a href="{{ path_for('users')}}">Users</a>
+                                </li>
+                                <li>
+                                    <a href="{{ path_for('security')}}">Security</a>
+                                </li>
+                                <li><a href="{{ path_for('contactinfo')}}">Contact information</a></li>
+                                <li id="verified-menu">
+                                    <a href="{{ path_for('verifieddomains')}}">Verified domains</a>
+                                </li>
+                                <li id="manage-menu">
+                                    <a href="{{ path_for('manage')}}">Manage my data</a>
+                                </li>
+                                <li><a href="#pause">Pause or delete data</a></li>
+                                <li><a href="{{ path_for('auth.password.change') }}">Change password </a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown" id="billing">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Billing <span class="caret"></span></a>
+                            <ul class="dropdown-menu" id="billing-menu">
+                                <li><a href="#">Monthly plans or credits</a></li>
+                                <li>
+                                    <a href="{{ path_for('billinginfo')}}">Billing information</a>
+                                </li>
+                                <li>
+                                    <a href="{{ path_for('billinghistory')}}">Billing history</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown" id="extras">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Extras <span class="caret"></span></a>
+                            <ul class="dropdown-menu" id="extras-menu">
+                                <li>
+                                    <a href="{{ path_for('rewards')}}">Rewards</a>
+                                </li>
+                                <li>
+                                    <a href="{{ path_for('apikeys')}}">API keys</a>
+                                </li>
+                                <li><a href="{{ path_for('registeredapps')}}">Registered apps</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="{{ path_for('transactional')}}">Transactional</a>
+                        </li>
+                    </ul>
+                </div>   
+                <div class="inside-content">
+                    <div class="row">
+                       <div class="content h2">
+                            <h2 style="text-align:left;">Contact Information</h2>
+                       </div>
+                    </div>
+                    <div class="row lastunit">
+                        <div class="content h3">
+                            <h3>Profile</h3>
+                        </div>
+                        <p>This is the information we have associated with your MailChimp profile, which you can use to access multiple MailChimp accounts. If you need to reset your username or password, or verify account changes, we'll send the link to your profile email address.</p>
+                        <p>All contact information is kept strictly confidential. <a href="#" >View our privacy policy</a></p>
+                        <table class="topborder col-sm-12"> 
+                            <tr class="linear"> 
+                                <td class="unit"> 
+                                    <strong>Username</strong> 
+                                </td>
+                                <td class="lastUnit">  
+                                    <p>jasontrix113</p> 
+                                </td>
+                            </tr>
+                            <tr class="linear"> 
+                                <td class="unit"> 
+                                    <strong>First name</strong> 
+                                </td>
+                                <td class="lastUnit">  
+                                    <p>Jason</p> 
+                                </td> 
+                            </tr>
+                            <tr class="linear"> 
+                                <td class="unit"> 
+                                    <strong>Last name</strong> 
+                                </td>
+                                <td class="lastUnit">  
+                                    <p>Jocsin</p> 
+                                </td>
+                            </tr>
+                            <tr class="linear"> 
+                                <td class="unit"> 
+                                    <strong>Email address</strong> 
+                                </td>
+                                <td class="lastUnit">  
+                                    <p><a href="#">jsnjocsin@gmail.com</a><p> 
+                                </td>
+                            </tr>
+                        </table><br>
+                        <input type="text" class="btn btn-default" id="edit-btn" value="Edit Profile Information">
+                        <br>
+                    </div>
+                    <div class="row lastunit">
+                        <div class="content h3">
+                            <h3>Primary account contact</h3>
+                        </div>
+                        <p>Information about this account, such as campaign send notifications, will be sent to the email address listed here.</p>
+                        <table class="topborder col-sm-12"> 
+                            <tr class="linear"> 
+                                <td class="unit"><strong>Contact name</strong></td> 
+                                <td class="lastUnit">  
+                                    <p>Jason Jocsin</p> 
+                                </td> 
+                            </tr> 
+                            <tr class="linear"> 
+                                <td class="unit"> 
+                                    <strong>Company / Organization </strong> 
+                                </td>
+                                <td class="lastUnit">  
+                                    <p>Web App</p> 
+                                    <a href="#">http://reactmechanics.com</a>
+                                </td>
+                            </tr>
+                            <tr class="linear"> 
+                                <td class="unit"> 
+                                    <strong>Address</strong> 
+                                </td>
+                                <td class="lastUnit">  
+                                    <p>Pontevedra Negros Occidental</p>
+                                    <p>Bacolod, 6100</p>
+                                    <p>Philippines</p>
+                                </td>
+                            </tr>
+                            <tr class="linear"> 
+                                <td class="unit"> 
+                                    <strong>Phone</strong> 
+                                </td>
+                                <td class="lastUnit">  
+                                    <p>No phone number provided</p>
+                                </td> 
+                            </tr>
+                            <tr class="linear"> 
+                                <td> 
+                                    <strong>Email address</strong> 
+                                </td>
+                                <td> 
+                                    <p><a href="#">jsnjocsin@gmail.com</a><p> 
+                                </td>
+                            </tr>
+                        </table>
+                        <br>
+                        <input type="text" class="btn btn-default" id="edit-btn" value="Edit Contact Information">
+                        <br>
+                    </div>
+                    <div class="row lastunit">
+                        <div class="content h3">
+                            <h3> Account verification</h3>
+                        </div>
+                        <p>If we see patterns that seem unusual for your account, we'll need to verify your identity.</p>
+                        <div class="content h4">
+                            <h4> Verify via SMS </h4>
+                        </div>
+                        <p >Your phone number <b>63 09275131780</b> has been verified via SMS · <a href="#" >Edit</a></p>
+                        <div class="content h4">
+                            <h4>Verify identity with security questions </h4>
+                        </div>
+                        <input type="button" class="btn btn-default" id="enable-btn" value="Enable">
+                    </div>
+                    <div class="row lastunit">
+                        <div class="content h3">
+                            <h3>Data science privacy setting</h3>
+                        </div>
+                        <p>Some MailChimp features, like Discover Similar Subscribers, analyze information from user accounts to provide data-driven predictions and recommendations. Your participation can improve these results and help all customers achieve their email marketing goals.</p>
+                        <p>We make every effort to protect your data in these features, using privacy safeguards where possible and always complying with our <a href="#">Privacy Policy</a>.</p>
+                    </div>   
+                </div>
+                <footer>    
+                </footer>
+            </div>
+        </div>
+    </body>
+{% endblock %}

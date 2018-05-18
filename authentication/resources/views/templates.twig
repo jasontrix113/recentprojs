@@ -1,0 +1,546 @@
+{% extends 'templates/templatesApp.twig' %}
+{% block wrap %}
+    <div id="wrap">
+        <div class="main-content">
+            <div class="row templates"> 
+                <div class="campaign h1">
+                    <h1>Templates</h1>
+                </div>
+                <div class="create-btn" id="create-btn">
+                    <button class="btn btn-default btn-block" type="button">Create Template</button>
+                    <button class="btn btn-default btn-block" type="button" id="content-mng-btn">Content Manager</button>
+                </div>
+            </div>
+            <div class="row">
+            </div>
+                <div class="row table">
+                    <div class="table-responsive">
+                        <table id="myTable" class="table table-stripped table-hover" cellspacing="0" width="100%">
+                        <thead>
+                            <tr>
+                                <th>Template name</th>
+                                <th>Template controls</th>
+                            </tr>
+                        </thead>
+                        <tr>
+                            <td class="td-list col-sm-10"> 
+                                <ul class="nav navbar-nav template-list">
+                                    <li class="template-list-item">
+                                        <label class="checkbox" for="one_unsubs"> 
+                                            <div class="av-checkbox" role="presentation">
+                                                <input type='checkbox' name='unsubs' value='valuable' id="unsubs"><label for="unsubs"></label>
+                                            </div>
+                                            <div class="checkbox-description"> 
+                                                <div class="template-image col-sm-5" style="float: left;">
+                                                    <img src="https://gallery.mailchimp.com/381e056a88cb5504f1a00578d/template-screens/28553_screen.png">
+                                                </div>
+                                                <div class="template-title col-sm-6" style="float: right;" >
+                                                    <h4><a href="#">a-template</a></h4>
+                                                    <p>Last edited on Mar 30, 2017 5:34 am by Jason Jocsin</p>
+                                                    <p>Drag and drop</p>
+                                                </div>    
+                                            </div>
+                                        </label>     
+                                    </li>
+                                </ul>
+                             </td>
+                             <td class="td-list col-sm-2">
+                                <div class="edit-controls">
+                                    <div class="edit-btn">
+                                         <button class="btn btn-default" id="preferences-btn" type="button"> Edit  </button>
+                                    </div>
+                                    <div class="dropdown" id="edit-option">
+                                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                            <span class="glyphicon glyphicon-chevron-down"></span>
+                                        </button>
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                            <li><a href="#">Create campaign</a></li>
+                                            <li><a href="#">Preview</a></li>
+                                            <li><a href="#">Export as HTML</a></li>
+                                            <li><a href="#">Share</a></li>
+                                            <li><a href="#">Replicate</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="td-list col-sm-10"> 
+                                <ul class="nav navbar-nav template-list">
+                                    <li class="template-list-item">
+                                        <label class="checkbox" for="one_unsubs"> 
+                                            <div class="av-checkbox" role="presentation">
+                                                <input type='checkbox' name='unsubs' value='valuable' id="unsubs"><label for="unsubs"></label>
+                                            </div>
+                                            <div class="checkbox-description"> 
+                                                <div class="template-image col-sm-5" style="float: left;">
+                                                    <img src="https://gallery.mailchimp.com/381e056a88cb5504f1a00578d/template-screens/28553_screen.png">
+                                                </div>
+                                                <div class="template-title col-sm-6" style="float: right;" >
+                                                    <h4><a href="#">b-template</a></h4>
+                                                    <p>Last edited on Mar 30, 2017 5:34 am by Jason Jocsin</p>
+                                                    <p>Drag and drop</p>
+                                                </div>    
+                                            </div>
+                                        </label>     
+                                    </li>
+                                </ul>
+                             </td>
+                             <td class="td-list col-sm-2">
+                                <div class="edit-controls">
+                                    <div class="edit-btn">
+                                         <button class="btn btn-default" id="preferences-btn" type="button"> Edit  </button>
+                                    </div>
+                                    <div class="dropdown" id="edit-option">
+                                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                            <span class="glyphicon glyphicon-chevron-down"></span>
+                                        </button>
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                            <li><a href="#">Create campaign</a></li>
+                                            <li><a href="#">Preview</a></li>
+                                            <li><a href="#">Export as HTML</a></li>
+                                            <li><a href="#">Share</a></li>
+                                            <li><a href="#">Replicate</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="td-list col-sm-10"> 
+                                <ul class="nav navbar-nav template-list">
+                                    <li class="template-list-item">
+                                        <label class="checkbox" for="one_unsubs"> 
+                                            <div class="av-checkbox" role="presentation">
+                                                <input type='checkbox' name='unsubs' value='valuable' id="unsubs"><label for="unsubs"></label>
+                                            </div>
+                                            <div class="checkbox-description"> 
+                                                <div class="template-image col-sm-5" style="float: left;">
+                                                    <img src="https://gallery.mailchimp.com/381e056a88cb5504f1a00578d/template-screens/28553_screen.png">
+                                                </div>
+                                                <div class="template-title col-sm-6" style="float: right;" >
+                                                    <h4><a href="#">c-template</a></h4>
+                                                    <p>Last edited on Mar 30, 2017 5:34 am by Jason Jocsin</p>
+                                                    <p>Drag and drop</p>
+                                                </div>    
+                                            </div>
+                                        </label>     
+                                    </li>
+                                </ul>
+                             </td>
+                             <td class="td-list col-sm-2">
+                                <div class="edit-controls">
+                                    <div class="edit-btn">
+                                         <button class="btn btn-default" id="preferences-btn" type="button"> Edit  </button>
+                                    </div>
+                                    <div class="dropdown" id="edit-option">
+                                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                            <span class="glyphicon glyphicon-chevron-down"></span>
+                                        </button>
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                            <li><a href="#">Create campaign</a></li>
+                                            <li><a href="#">Preview</a></li>
+                                            <li><a href="#">Export as HTML</a></li>
+                                            <li><a href="#">Share</a></li>
+                                            <li><a href="#">Replicate</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="td-list col-sm-10"> 
+                                <ul class="nav navbar-nav template-list">
+                                    <li class="template-list-item">
+                                        <label class="checkbox" for="one_unsubs"> 
+                                            <div class="av-checkbox" role="presentation">
+                                                <input type='checkbox' name='unsubs' value='valuable' id="unsubs"><label for="unsubs"></label>
+                                            </div>
+                                            <div class="checkbox-description"> 
+                                                <div class="template-image col-sm-5" style="float: left;">
+                                                    <img src="https://gallery.mailchimp.com/381e056a88cb5504f1a00578d/template-screens/28553_screen.png">
+                                                </div>
+                                                <div class="template-title col-sm-6" style="float: right;" >
+                                                    <h4><a href="#">d-template</a></h4>
+                                                    <p>Last edited on Mar 30, 2017 5:34 am by Jason Jocsin</p>
+                                                    <p>Drag and drop</p>
+                                                </div>    
+                                            </div>
+                                        </label>     
+                                    </li>
+                                </ul>
+                             </td>
+                             <td class="td-list col-sm-2">
+                                <div class="edit-controls">
+                                    <div class="edit-btn">
+                                         <button class="btn btn-default" id="preferences-btn" type="button"> Edit  </button>
+                                    </div>
+                                    <div class="dropdown" id="edit-option">
+                                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                            <span class="glyphicon glyphicon-chevron-down"></span>
+                                        </button>
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                            <li><a href="#">Create campaign</a></li>
+                                            <li><a href="#">Preview</a></li>
+                                            <li><a href="#">Export as HTML</a></li>
+                                            <li><a href="#">Share</a></li>
+                                            <li><a href="#">Replicate</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="td-list col-sm-10"> 
+                                <ul class="nav navbar-nav template-list">
+                                    <li class="template-list-item">
+                                        <label class="checkbox" for="one_unsubs"> 
+                                            <div class="av-checkbox" role="presentation">
+                                                <input type='checkbox' name='unsubs' value='valuable' id="unsubs"><label for="unsubs"></label>
+                                            </div>
+                                            <div class="checkbox-description"> 
+                                                <div class="template-image col-sm-5" style="float: left;">
+                                                    <img src="https://gallery.mailchimp.com/381e056a88cb5504f1a00578d/template-screens/28553_screen.png">
+                                                </div>
+                                                <div class="template-title col-sm-6" style="float: right;" >
+                                                    <h4><a href="#">e-template</a></h4>
+                                                    <p>Last edited on Mar 30, 2017 5:34 am by Jason Jocsin</p>
+                                                    <p>Drag and drop</p>
+                                                </div>    
+                                            </div>
+                                        </label>     
+                                    </li>
+                                </ul>
+                             </td>
+                             <td class="td-list col-sm-2">
+                                <div class="edit-controls">
+                                    <div class="edit-btn">
+                                         <button class="btn btn-default" id="preferences-btn" type="button"> Edit  </button>
+                                    </div>
+                                    <div class="dropdown" id="edit-option">
+                                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                            <span class="glyphicon glyphicon-chevron-down"></span>
+                                        </button>
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                            <li><a href="#">Create campaign</a></li>
+                                            <li><a href="#">Preview</a></li>
+                                            <li><a href="#">Export as HTML</a></li>
+                                            <li><a href="#">Share</a></li>
+                                            <li><a href="#">Replicate</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="td-list col-sm-10"> 
+                                <ul class="nav navbar-nav template-list">
+                                    <li class="template-list-item">
+                                        <label class="checkbox" for="one_unsubs"> 
+                                            <div class="av-checkbox" role="presentation">
+                                                <input type='checkbox' name='unsubs' value='valuable' id="unsubs"><label for="unsubs"></label>
+                                            </div>
+                                            <div class="checkbox-description"> 
+                                                <div class="template-image col-sm-5" style="float: left;">
+                                                    <img src="https://gallery.mailchimp.com/381e056a88cb5504f1a00578d/template-screens/28553_screen.png">
+                                                </div>
+                                                <div class="template-title col-sm-6" style="float: right;" >
+                                                    <h4><a href="#">f-template</a></h4>
+                                                    <p>Last edited on Mar 30, 2017 5:34 am by Jason Jocsin</p>
+                                                    <p>Drag and drop</p>
+                                                </div>    
+                                            </div>
+                                        </label>     
+                                    </li>
+                                </ul>
+                             </td>
+                             <td class="td-list col-sm-2">
+                                <div class="edit-controls">
+                                    <div class="edit-btn">
+                                         <button class="btn btn-default" id="preferences-btn" type="button"> Edit  </button>
+                                    </div>
+                                    <div class="dropdown" id="edit-option">
+                                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                            <span class="glyphicon glyphicon-chevron-down"></span>
+                                        </button>
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                            <li><a href="#">Create campaign</a></li>
+                                            <li><a href="#">Preview</a></li>
+                                            <li><a href="#">Export as HTML</a></li>
+                                            <li><a href="#">Share</a></li>
+                                            <li><a href="#">Replicate</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                         <tr>
+                            <td class="td-list col-sm-10"> 
+                                <ul class="nav navbar-nav template-list">
+                                    <li class="template-list-item">
+                                        <label class="checkbox" for="one_unsubs"> 
+                                            <div class="av-checkbox" role="presentation">
+                                                <input type='checkbox' name='unsubs' value='valuable' id="unsubs"><label for="unsubs"></label>
+                                            </div>
+                                            <div class="checkbox-description"> 
+                                                <div class="template-image col-sm-5" style="float: left;">
+                                                    <img src="https://gallery.mailchimp.com/381e056a88cb5504f1a00578d/template-screens/28553_screen.png">
+                                                </div>
+                                                <div class="template-title col-sm-6" style="float: right;" >
+                                                    <h4><a href="#">g-template</a></h4>
+                                                    <p>Last edited on Mar 30, 2017 5:34 am by Jason Jocsin</p>
+                                                    <p>Drag and drop</p>
+                                                </div>    
+                                            </div>
+                                        </label>     
+                                    </li>
+                                </ul>
+                             </td>
+                             <td class="td-list col-sm-2">
+                                <div class="edit-controls">
+                                    <div class="edit-btn">
+                                         <button class="btn btn-default" id="preferences-btn" type="button"> Edit  </button>
+                                    </div>
+                                    <div class="dropdown" id="edit-option">
+                                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                            <span class="glyphicon glyphicon-chevron-down"></span>
+                                        </button>
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                            <li><a href="#">Create campaign</a></li>
+                                            <li><a href="#">Preview</a></li>
+                                            <li><a href="#">Export as HTML</a></li>
+                                            <li><a href="#">Share</a></li>
+                                            <li><a href="#">Replicate</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="td-list col-sm-10"> 
+                                <ul class="nav navbar-nav template-list">
+                                    <li class="template-list-item">
+                                        <label class="checkbox" for="one_unsubs"> 
+                                            <div class="av-checkbox" role="presentation">
+                                                <input type='checkbox' name='unsubs' value='valuable' id="unsubs"><label for="unsubs"></label>
+                                            </div>
+                                            <div class="checkbox-description"> 
+                                                <div class="template-image col-sm-5" style="float: left;">
+                                                    <img src="https://gallery.mailchimp.com/381e056a88cb5504f1a00578d/template-screens/28553_screen.png">
+                                                </div>
+                                                <div class="template-title col-sm-6" style="float: right;" >
+                                                    <h4><a href="#">h-template</a></h4>
+                                                    <p>Last edited on Mar 30, 2017 5:34 am by Jason Jocsin</p>
+                                                    <p>Drag and drop</p>
+                                                </div>    
+                                            </div>
+                                        </label>     
+                                    </li>
+                                </ul>
+                             </td>
+                             <td class="td-list col-sm-2">
+                                <div class="edit-controls">
+                                    <div class="edit-btn">
+                                         <button class="btn btn-default" id="preferences-btn" type="button"> Edit  </button>
+                                    </div>
+                                    <div class="dropdown" id="edit-option">
+                                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                            <span class="glyphicon glyphicon-chevron-down"></span>
+                                        </button>
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                            <li><a href="#">Create campaign</a></li>
+                                            <li><a href="#">Preview</a></li>
+                                            <li><a href="#">Export as HTML</a></li>
+                                            <li><a href="#">Share</a></li>
+                                            <li><a href="#">Replicate</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="td-list col-sm-10"> 
+                                <ul class="nav navbar-nav template-list">
+                                    <li class="template-list-item">
+                                        <label class="checkbox" for="one_unsubs"> 
+                                            <div class="av-checkbox" role="presentation">
+                                                <input type='checkbox' name='unsubs' value='valuable' id="unsubs"><label for="unsubs"></label>
+                                            </div>
+                                            <div class="checkbox-description"> 
+                                                <div class="template-image col-sm-5" style="float: left;">
+                                                    <img src="https://gallery.mailchimp.com/381e056a88cb5504f1a00578d/template-screens/28553_screen.png">
+                                                </div>
+                                                <div class="template-title col-sm-6" style="float: right;" >
+                                                    <h4><a href="#">i-template</a></h4>
+                                                    <p>Last edited on Mar 30, 2017 5:34 am by Jason Jocsin</p>
+                                                    <p>Drag and drop</p>
+                                                </div>    
+                                            </div>
+                                        </label>     
+                                    </li>
+                                </ul>
+                             </td>
+                             <td class="td-list col-sm-2">
+                                <div class="edit-controls">
+                                    <div class="edit-btn">
+                                         <button class="btn btn-default" id="preferences-btn" type="button"> Edit  </button>
+                                    </div>
+                                    <div class="dropdown" id="edit-option">
+                                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                            <span class="glyphicon glyphicon-chevron-down"></span>
+                                        </button>
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                            <li><a href="#">Create campaign</a></li>
+                                            <li><a href="#">Preview</a></li>
+                                            <li><a href="#">Export as HTML</a></li>
+                                            <li><a href="#">Share</a></li>
+                                            <li><a href="#">Replicate</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="td-list col-sm-10"> 
+                                <ul class="nav navbar-nav template-list">
+                                    <li class="template-list-item">
+                                        <label class="checkbox" for="one_unsubs"> 
+                                            <div class="av-checkbox" role="presentation">
+                                                <input type='checkbox' name='unsubs' value='valuable' id="unsubs"><label for="unsubs"></label>
+                                            </div>
+                                            <div class="checkbox-description"> 
+                                                <div class="template-image col-sm-5" style="float: left;">
+                                                    <img src="https://gallery.mailchimp.com/381e056a88cb5504f1a00578d/template-screens/28553_screen.png">
+                                                </div>
+                                                <div class="template-title col-sm-6" style="float: right;" >
+                                                    <h4><a href="#">j-template</a></h4>
+                                                    <p>Last edited on Mar 30, 2017 5:34 am by Jason Jocsin</p>
+                                                    <p>Drag and drop</p>
+                                                </div>    
+                                            </div>
+                                        </label>     
+                                    </li>
+                                </ul>
+                             </td>
+                             <td class="td-list col-sm-2">
+                                <div class="edit-controls">
+                                    <div class="edit-btn">
+                                         <button class="btn btn-default" id="preferences-btn" type="button"> Edit  </button>
+                                    </div>
+                                    <div class="dropdown" id="edit-option">
+                                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                            <span class="glyphicon glyphicon-chevron-down"></span>
+                                        </button>
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                            <li><a href="#">Create campaign</a></li>
+                                            <li><a href="#">Preview</a></li>
+                                            <li><a href="#">Export as HTML</a></li>
+                                            <li><a href="#">Share</a></li>
+                                            <li><a href="#">Replicate</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="td-list col-sm-10"> 
+                                <ul class="nav navbar-nav template-list">
+                                    <li class="template-list-item">
+                                        <label class="checkbox" for="one_unsubs"> 
+                                            <div class="av-checkbox" role="presentation">
+                                                <input type='checkbox' name='unsubs' value='valuable' id="unsubs"><label for="unsubs"></label>
+                                            </div>
+                                            <div class="checkbox-description"> 
+                                                <div class="template-image col-sm-5" style="float: left;">
+                                                    <img src="https://gallery.mailchimp.com/381e056a88cb5504f1a00578d/template-screens/28553_screen.png">
+                                                </div>
+                                                <div class="template-title col-sm-6" style="float: right;" >
+                                                    <h4><a href="#">k-template</a></h4>
+                                                    <p>Last edited on Mar 30, 2017 5:34 am by Jason Jocsin</p>
+                                                    <p>Drag and drop</p>
+                                                </div>    
+                                            </div>
+                                        </label>     
+                                    </li>
+                                </ul>
+                             </td>
+                             <td class="td-list col-sm-2">
+                                <div class="edit-controls">
+                                    <div class="edit-btn">
+                                         <button class="btn btn-default" id="preferences-btn" type="button"> Edit  </button>
+                                    </div>
+                                    <div class="dropdown" id="edit-option">
+                                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                            <span class="glyphicon glyphicon-chevron-down"></span>
+                                        </button>
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                            <li><a href="#">Create campaign</a></li>
+                                            <li><a href="#">Preview</a></li>
+                                            <li><a href="#">Export as HTML</a></li>
+                                            <li><a href="#">Share</a></li>
+                                            <li><a href="#">Replicate</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="td-list col-sm-10"> 
+                                <ul class="nav navbar-nav template-list">
+                                    <li class="template-list-item">
+                                        <label class="checkbox" for="one_unsubs"> 
+                                            <div class="av-checkbox" role="presentation">
+                                                <input type='checkbox' name='unsubs' value='valuable' id="unsubs"><label for="unsubs"></label>
+                                            </div>
+                                            <div class="checkbox-description"> 
+                                                <div class="template-image col-sm-5" style="float: left;">
+                                                    <img src="https://gallery.mailchimp.com/381e056a88cb5504f1a00578d/template-screens/28553_screen.png">
+                                                </div>
+                                                <div class="template-title col-sm-6" style="float: right;" >
+                                                    <h4><a href="#">l-template</a></h4>
+                                                    <p>Last edited on Mar 30, 2017 5:34 am by Jason Jocsin</p>
+                                                    <p>Drag and drop</p>
+                                                </div>    
+                                            </div>
+                                        </label>     
+                                    </li>
+                                </ul>
+                             </td>
+                             <td class="td-list col-sm-2">
+                                <div class="edit-controls">
+                                    <div class="edit-btn">
+                                         <button class="btn btn-default" id="preferences-btn" type="button"> Edit  </button>
+                                    </div>
+                                    <div class="dropdown" id="edit-option">
+                                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                            <span class="glyphicon glyphicon-chevron-down"></span>
+                                        </button>
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                            <li><a href="#">Create campaign</a></li>
+                                            <li><a href="#">Preview</a></li>
+                                            <li><a href="#">Export as HTML</a></li>
+                                            <li><a href="#">Share</a></li>
+                                            <li><a href="#">Replicate</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <footer>
+            </footer>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="../../../../reactmechanics/plugins/bootstrap-data-table-master/js/jquery.bdt.js"></script>
+    <script src="../../../../reactmechanics/plugins/bootstrap-data-table-master/js/vendor/bootstrap.min.js"></script>
+    <script src="../../../../reactmechanics/plugins/bootstrap-data-table-master/js/vendor/jquery.sortelements.js"></script>
+    <script>
+        $(document).ready( function () {
+            $('#myTable').bdt();
+        });
+    </script>
+{% endblock %}

@@ -1,0 +1,139 @@
+{% extends 'templates/tabcontents/overviewApp.twig' %}
+{% block wrap %}
+    <body id="content">
+        <div id="wrap">
+            <div class="main content">
+                <div class="row list"> 
+                    <div class="list h1">
+                        <h1>{{auth.user.firstname}}</h1>
+                    </div>
+                </div>
+                <div class="row" id="profile">
+                    <ul class="nav nav-tabs" role="tablist" id="profile-tabs">
+                        <li>
+                             <a href="{{ path_for('overview')}}">Overview</a>
+                        </li>
+                        <li class="dropdown" id="settings">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Settings <span class="caret"></span></a>
+                            <ul class="dropdown-menu" id="settings-menu">
+                                <li id="details-menu">
+                                    <a href="{{ path_for('details')}}">Details</a>
+                                </li>
+                                <li id="users-menu">
+                                    <a href="{{ path_for('users')}}">Users</a>
+                                </li>
+                                <li>
+                                    <a href="{{ path_for('security')}}">Security</a>
+                                </li>
+                                <li><a href="{{ path_for('contactinfo')}}">Contact information</a></li>
+                                <li id="verified-menu">
+                                    <a href="{{ path_for('verifieddomains')}}">Verified domains</a>
+                                </li>
+                                <li id="manage-menu">
+                                    <a href="{{ path_for('manage')}}">Manage my data</a>
+                                </li>
+                                <li><a href="#pause">Pause or delete data</a></li>
+                                <li><a href="{{ path_for('auth.password.change') }}">Change password </a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown" id="billing">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Billing <span class="caret"></span></a>
+                            <ul class="dropdown-menu" id="billing-menu">
+                                <li>
+                                    <a href="#">Monthly plans or credits</a>
+                                </li>
+                                <li>
+                                    <a href="{{ path_for('billinginfo')}}">Billing information</a>
+                                </li>
+                                <li>
+                                    <a href="{{ path_for('billinghistory')}}">Billing history</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown" id="extras">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Extras <span class="caret"></span></a>
+                            <ul class="dropdown-menu" id="extras-menu">
+                                <li>
+                                    <a href="{{ path_for('rewards')}}">Rewards</a>
+                                </li>
+                                <li>
+                                    <a href="{{ path_for('apikeys')}}">API keys</a>
+                                </li>
+                                <li>
+                                    <a href="{{ path_for('registeredapps')}}">Registered apps</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="{{ path_for('transactional')}}">Transactional</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="inside-content">
+                    <div class="row overview-row">
+                       <div class="content h3">
+                            <h3><span>Forever Free plan</span></h3>     
+                       </div>
+                    </div>
+                    <div class="overview-content col-sm-12">
+                        <div class="col-sm-6" id="left-overview">
+                            <div class="row">
+                                <div class="content-text">
+                                    <p style="float:left;">Subscribers</p>
+                                    <p style="float:right;"><span>0</span> of <span>2000</span></p>  
+                                </div>   
+                            </div>
+                            <div class="row">
+                                <div>
+                                    <div class="border-bottom">
+                                        <span style="width:0%"></span>
+                                    </div>
+                                    <p class="bottom-text">2000 subscribers remaining until your plan requires an upgrade. <a href="#">Learn more</a></p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <input type="button" class="btn btn-default" id="upgrade-btn" value="Upgrade Account">    
+                            </div>
+                        </div>
+                        <div class="col-sm-6" id="right-overview">
+                            <div class="row">
+                                <div class="right-overview-header">
+                                    <div class="overview-header">
+                                        <p style="float:left;">Sends</p>
+                                        <p style="float:right;"><span>0</span> of <span>12000</span></p>
+                                    </div>
+                                </div>  
+                            </div>
+                            <div class="row">
+                                <div class="right-overview-bottom">
+                                    <div class="border-bottom">
+                                        <span style="width:0%"></span>
+                                    </div>
+                                    <p class="bottom-text">Sends remaining will reset Apr 30</p>
+                                </div>
+                            </div>       
+                        </div>
+                    </div>
+                    <div class="row overview-row">
+                        <div class="content h3">
+                            <h3> Account issues </h3>
+                        </div>
+                    </div>
+                    <div class="row overview-row c-white">
+                        <div class="c-white-content">
+                            <div class="no-data c-image-content"> 
+                                <img class="icon" src="../../../../../reactmechanics/media/img/no-comment.svg" role="presentation"> 
+                            </div>
+                            <div class="c-text-content">
+                                <h2>You're doing great!</h2> 
+                                <p>Check out our <a href="#">compliance tips</a> for best practices and to avoid potential sending pitfalls.</p>    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <footer>    
+                </footer>
+            </div>
+        </div>
+    </body>
+{% endblock %}

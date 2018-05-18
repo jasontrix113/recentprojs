@@ -1,0 +1,33 @@
+{% extends 'templates/contactApp.twig' %}
+{% block wrap %}
+    <div id="wrap">
+        <div class="main-content">
+            <div class="row list"> 
+                <div class="campaign h1">
+                    <h1>Contact</h1>
+                </div>
+                <div class="create-btn" id="create-btn">
+                    <a href="{{ path_for('createcontact')}}"><button class="btn btn-default btn-block" type="button">Create a Contact</button></a>
+                </div>
+            </div>
+            <div class="row campaign-row">
+                <div class="c-white">                  
+                    <div class="row c-white-content">
+                        <div class="c-image-content">
+                            <span><i class="fa fa-file-text-o fa-5x" style="color: #bfe5ff"></i></span>
+                        </div>
+                        <div class="c-text-content">
+                            <h2> You have no contacts </h2>
+                            <br>
+                            <p> Lists are where you store your contacts.
+Create a single list, then use <a href="#">groups</a> to organize <a href="{{ path_for('contact')}}">contacts</a>, and target them with segments.</p>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer>
+            </footer>
+        </div>
+    </div>
+{% endblock %}

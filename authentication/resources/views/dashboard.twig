@@ -1,0 +1,196 @@
+{% extends 'templates/dashboardApp.twig' %}
+{% block wrap %}
+    <link rel="stylesheet" type="text/css" href="../../../../reactmechanics/plugins/percircle-master/dist/css/percircle.css">
+    <link rel="stylesheet" type="text/css" href="../../../plugins/jquery-plugin-circliful-master/css/jquery.circliful.css">
+    <div class="main-content mc-content">
+        <div class="row"> 
+            <div class="welcome-msg h1">
+                <h1>Welcome To React Mechanics, {{ auth.user.firstname}}! </h1>
+                <p> This is your Dashboard. Use it to learn new skills, review important account stats and explore features that we recommend based on your activity. </p> 
+            </div>
+            <div class="create-btn" id="create-btn">
+                <button class="btn btn-default btn-block" type="button" data-toggle="modal" data-target="#interstitialModal">Create Campaign</button>
+            </div>
+        </div>
+        <div class="content container" id="row-circles">
+            <!--<div class="content col-sm-3" id="circles">
+               <div id="custom1" class="green big"></div> 
+            </div>
+            <div class="content col-sm-3" id="circles">
+               <div id="custom2" class="blue big"></div> 
+            </div>
+            <div class="content col-sm-3" id="circles">
+               <div id="custom3" class="red big"></div> 
+            </div>
+            <div class="content col-sm-3" id="circles">
+               <div id="custom4" class="yellow big"></div> 
+            </div>          -->
+            <div class="col-sm-12 col-sm-3" style="text-align: center;">
+                <div id="happy"></div>
+                <strong>Happy</strong>
+            </div>
+            <div class="col-sm-12 col-sm-3" style="text-align: center;">
+                <div id="sad"></div>
+                <strong>Sad</strong>
+            </div>
+            <div class="col-sm-12 col-sm-3" style="text-align: center;">
+                <div id="mad"></div>
+                <strong>Mad</strong>
+            </div>
+            <div class="col-sm-12 col-sm-3" style="text-align: center;">
+                <div id="confuse"></div>
+                <strong>Confuse</strong>
+            </div>
+        </div>
+        <br>
+        <div class="row" id="last-row">
+            <div class="col-sm-12">
+                <div class="col-sm-6 stat">   
+                    <div class="content-header"> 
+                        <h3> Statistics </h3>
+                    </div>
+                    <div class="content-stat">
+                        <table>
+                            <tr>
+                                <td><p>Sent Reacts</p></td>
+                                <td id="value">--</td>
+                            </tr>
+                            <tr>
+                                <td><p>Reacts Recieved</p></td>
+                                <td id="value">--</td>
+                            </tr>
+                            <tr>
+                                <td><p>No Reacts</p></td>
+                                <td id="value">--</td>
+                            </tr>
+                        </table>
+                        <input type="button" class="btn btn-default" id="report-btn" value="Reports">
+                        <input type="button" class="btn btn-default" id="open-reacts-btn" value="Open Reacts">
+                    </div>
+                </div>
+                <div class="col-sm-6 art">
+                    <div class="content-header">
+                        <h3> Articles </h3>
+                    </div>
+                    <div class="content-art">
+                        <article>
+                            <h4>Article 1</h4>
+                        </article>
+                        <article>
+                            <h4>Article 2</h4>
+                        </article>
+                        <article>
+                            <h4>Article 3</h4>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="interstitialModal" role="dialog" aria-labelledby="interstitialLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <div class="row">
+                                <button style="margin-top: 8px;" type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only text-muted">Close</span></button>  
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="content h1">
+                                <h1> What campaign do you want to create?</h1>
+                            </div>
+                            <div class="modal-img">
+                                <img src="../../../../../reactmechanics/media/img/space-illo.svg">
+                            </div>
+                            <div class="modal-content-text" style="max-width: 600px;">
+                                <p>We know all the shortcuts because we live here! We'll help you find and create the campaigns you need.</p>
+                                <br>
+                                <button type="submit" id="guide-btn">Let us guide you</button>
+                            </div> 
+                        </div>
+                        <div class="row">
+                            <div class="row modal-footer">
+                                <div class="col-sm-6">
+                                    <a tabindex="0" href="{{ path_for('email')}}">
+                                        <img src="../../../../../reactmechanics/media/img/email-illo.svg">
+                                        <div>Create an Email</div>
+                                    </a>
+                                </div>
+                                <div class="col-sm-6">
+                                    <a tabindex="0" href="">
+                                        <img src="../../../../../reactmechanics/media/img/ad-illo.svg">
+                                        <div>Generate Reacts</div>
+                                    </a>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>         
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+   <!-- <script src="../../../../reactmechanics/plugins/jquery-circle-progress-master/dist/circle-progress.js"></script>-->
+    <script src="../../../../reactmechanics/plugins/jquery-plugin-circliful-master/js/jquery.circliful.js"></script>
+    <script src="../../../../reactmechanics/plugins/percircle-master/dist/js/percircle.js"></script>
+    <!--<script type="text/javascript">
+        $(function(){
+            $("#custom1").percircle();
+            $("#custom2").percircle();
+            $("#custom3").percircle();
+            $("#custom4").percircle();
+        });
+        $("#custom1").percircle({
+            text: "Happy",
+            percent: 31
+        });
+        $("#custom2").percircle({
+            text: "Sad",
+            percent: 25
+        });
+        $("#custom3").percircle({
+            text: "Mad",
+            percent: 51
+        });
+        $("#custom4").percircle({
+            text: "Confuse",
+            percent: 67
+        });
+    </script>-->
+    <script>
+        $( document ).ready(function() {
+        $("#happy").circliful({
+                    animationStep: 5,
+                    foregroundBorderWidth: 12,
+                    backgroundBorderWidth: 12,
+                    percent: 10,
+                    percentageY: 105,
+                    foregroundColor: "green"
+        });
+        $("#sad").circliful({
+                    animationStep: 5,
+                    foregroundBorderWidth: 12,
+                    backgroundBorderWidth: 12,
+                    percent: 10,
+                    percentageY: 105,
+                    foregroundColor: "blue"
+        });
+        $("#mad").circliful({
+                    animationStep: 5,
+                    foregroundBorderWidth: 12,
+                    backgroundBorderWidth: 12,
+                    percent: 20,
+                    percentageY: 105,
+                    foregroundColor: "red"
+        });
+        $("#confuse").circliful({
+                    animationStep: 5,
+                    foregroundBorderWidth: 12,
+                    backgroundBorderWidth: 12,
+                    percent: 20,
+                    percentageY: 105,
+                    foregroundColor: "yellow"
+        });
+        });
+    </script>
+{% endblock %}

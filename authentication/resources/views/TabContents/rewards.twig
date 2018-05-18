@@ -1,0 +1,165 @@
+{% extends 'templates/tabcontents/rewardsApp.twig' %}
+{% block wrap %}
+    <body id="content">
+        <div id="wrap">
+            <div class="main content">
+                <div class="row list"> 
+                    <div class="list h1">
+                        <h1>{{auth.user.firstname}}</h1>
+                    </div>
+                </div>
+               <div class="row" id="profile">
+                    <ul class="nav nav-tabs" role="tablist" id="profile-tabs">
+                        <li>
+                             <a href="{{ path_for('overview')}}">Overview</a>
+                        </li>
+                        <li class="dropdown" id="settings">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Settings <span class="caret"></span></a>
+                            <ul class="dropdown-menu" id="settings-menu">
+                                <li id="details-menu">
+                                    <a href="{{ path_for('details')}}">Details</a>
+                                </li>
+                                <li id="users-menu">
+                                    <a href="{{ path_for('users')}}">Users</a>
+                                </li>
+                                <li>
+                                    <a href="{{ path_for('security')}}">Security</a>
+                                </li>
+                                <li><a href="{{ path_for('contactinfo')}}">Contact information</a></li>
+                                <li id="verified-menu">
+                                    <a href="{{ path_for('verifieddomains')}}">Verified domains</a>
+                                </li>
+                                <li id="manage-menu">
+                                    <a href="{{ path_for('manage')}}">Manage my data</a>
+                                </li>
+                                <li><a href="#pause">Pause or delete data</a></li>
+                                <li><a href="{{ path_for('auth.password.change') }}">Change password </a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown" id="billing">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Billing <span class="caret"></span></a>
+                            <ul class="dropdown-menu" id="billing-menu">
+                                <li><a href="#">Monthly plans or credits</a></li>
+                                <li>
+                                    <a href="{{ path_for('billinginfo')}}">Billing information</a>
+                                </li>
+                                <li>
+                                    <a href="{{ path_for('billinghistory')}}">Billing history</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown" id="extras">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Extras <span class="caret"></span></a>
+                            <ul class="dropdown-menu" id="extras-menu">
+                                <li>
+                                    <a href="{{ path_for('rewards')}}">Rewards</a>
+                                </li>
+                                <li>
+                                    <a href="{{ path_for('apikeys')}}">API keys</a>
+                                </li>
+                                <li><a href="{{ path_for('registeredapps')}}">Registered apps</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="{{ path_for('transactional')}}">Transactional</a>
+                        </li>
+                    </ul>
+                </div>
+                 <div class="inside-content">
+                    <div class="row lastunit">
+                        <div class="content h2">
+                            <h2 style="text-align:left;">MonkeyRewards</h2>
+                        </div>
+                        <p>With MonkeyRewards, MailChimp customers can earn email credits for referring new, paying customers by placing a badge in their campaign footers. Free accounts require a badge on campaigns and forms.</p>
+                        <p>Every time you refer new MailChimp customers, we’ll add $30 in MonkeyRewards to their account and to your account. Everybody wins!</p>
+                    </div>
+                    <div class="row lastunit">
+                        <div class="content h3">
+                            <h3> Rules and guidelines</h3>
+                        </div>
+                        <p>A “referral” is when someone clicks your badge and becomes a paid customer. We'll automatically add MonkeyRewards to your account when someone signs up for a paid plan. You can redeem your MonkeyRewards when you purchase something in MailChimp.</p>
+                        <p>Please be aware that if MonkeyRewards is abused in any way, the account will be deactivated and MonkeyRewards will be removed. Examples include but are not limited to:</p>
+                        <ul class="disc"> 
+                            <li>
+                                Swapping out our wonderful chimp with a different graphic.
+                            </li>
+                            <li>
+                                Distributing our link on banner ad networks without our permission.
+                            </li>
+                            <li>Sending email campaigns that violate our 
+                                <a class="inline-block-i" href="#">anti-spam policy and terms of use
+                                </a>.
+                            </li>
+                        </ul> 
+                    </div>
+                    <div class="row lastunit">
+                        <div class="content h3">
+                            <h3>Select your MonkeyRewards badges</h3>
+                        </div>
+                    </div>
+                    <div class="row lastunit">
+                        <div class="reward-box col-sm-6"> 
+                            <h4 class="!margin--lv0">Email campaign badge</h4> 
+                            <p>Appears below the footer of email templates</p> 
+                            <a href="#">
+                                <img src="../../../../../reactmechanics/media/img/MC_MonkeyReward_15.png" id="campaign-badge" height="54" width="139"> &nbsp;Change&nbsp;Image
+                            </a>
+                        </div>
+                        <div class="reward-box2 col-sm-6">
+                             <h4 class="!margin--lv0">Signup form badge</h4>
+                            <p>Appears in signup forms and response emails</p>  
+                            <a href="#">
+                                <img src="../../../../../reactmechanics/media/img/MC_MonkeyReward_15.png" id="campaign-badge" height="54" width="145">&nbsp;Change&nbsp;Image
+                            </a> 
+                        </div>
+                    </div>
+                    <div class="row lastunit">
+                        <div class="content h3">
+                            <h3> Link embed code </h3>
+                        </div>
+                        <p>If you’d rather use a text link in your emails or on your site, here’s some sample code (with your account’s referral ID) that you can use:</p>
+                    </div>
+                    <div class="row col-sm-12" id="linkunits">
+                        <div class="firstunit col-sm-6">
+                            <h4> Text link</h4>
+                            <pre><code> <span class="tag">&lt;a href=</span><span class="attr">"http://eepurl.com/cKb6Xf"</span><span class="tag">&gt;</span>Powered by MailChimp<span class="tag">&lt;/a&gt;</span> </code>
+                            </pre>
+                        </div>
+                        <div class="secondunit col-sm-6">
+                            <h4> Image link </h4>
+                            <pre><code> <span class="tag">&lt;a href=</span><span class="attr">"http://eepurl.com/cKb6Xf"</span><span class="tag">&gt;</span> <br> <span class="tag"> &lt;img src=</span><span class="attr">"http://www.YOURWEBSITE.com/YOURGRAPHIC.png"</span><span class="tag">&gt;</span> <br> <span class="tag">&lt;/a&gt;</span> </code>
+                            </pre>
+                        </div>
+                    </div>
+                    <div class="row col-sm-12">
+                        <div class="content h3">
+                            <h3> Rewards earned</h3>
+                        </div>
+                        <hr>
+                    </div>
+                    <div class="row col-sm-12" id="rewards">
+                        <ul class="linear-list">
+                            <li class="reward1 col-sm-4" >
+                                <h2 style="text-align:left;">$0.00 </h2>
+                                from<b> 0 </b> referrals
+                            </li>
+                            <li class="reward2 col-sm-4" >
+                                <h2 style="text-align:left;">$0.00 </h2>
+                                in total
+                            </li>
+                            <li class="reward3 col-sm-4" >
+                                <h2 style="text-align:left;">$0.00 </h2>
+                                credits left
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="row lastunit">
+                        <p>MonkeyRewards will be automatically applied to your next purchase.</p>
+                    </div>
+                </div>
+                <footer>    
+                </footer>
+            </div>
+        </div>
+    </body>
+{% endblock %}

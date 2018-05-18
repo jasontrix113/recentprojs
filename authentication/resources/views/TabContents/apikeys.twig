@@ -1,0 +1,133 @@
+{% extends 'templates/tabcontents/apikeysApp.twig' %}
+{% block wrap %}
+    <body id="content">
+        <title>API Keys</title>
+        <div id="wrap">
+            <div class="main content">
+                <div class="row list"> 
+                    <div class="list h1">
+                        <h1>{{auth.user.firstname}}</h1>
+                    </div>
+                </div>
+                <div class="row" id="profile">
+                    <ul class="nav nav-tabs" role="tablist" id="profile-tabs">
+                        <li>
+                             <a href="{{ path_for('overview')}}">Overview</a>
+                        </li>
+                        <li class="dropdown" id="settings">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Settings <span class="caret"></span></a>
+                            <ul class="dropdown-menu" id="settings-menu">
+                                <li id="details-menu">
+                                    <a href="{{ path_for('details')}}">Details</a>
+                                </li>
+                                <li id="users-menu">
+                                    <a href="{{ path_for('users')}}">Users</a>
+                                </li>
+                                <li>
+                                    <a href="{{ path_for('security')}}">Security</a>
+                                </li>
+                                <li><a href="{{ path_for('contactinfo')}}">Contact information</a></li>
+                                <li id="verified-menu">
+                                    <a href="{{ path_for('verifieddomains')}}">Verified domains</a>
+                                </li>
+                                <li id="manage-menu">
+                                    <a href="{{ path_for('manage')}}">Manage my data</a>
+                                </li>
+                                <li><a href="#pause">Pause or delete data</a></li>
+                                <li><a href="{{ path_for('auth.password.change') }}">Change password </a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown" id="billing">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Billing <span class="caret"></span></a>
+                            <ul class="dropdown-menu" id="billing-menu">
+                                <li><a href="#">Monthly plans or credits</a></li>
+                                <li>
+                                    <a href="{{ path_for('billinginfo')}}">Billing information</a>
+                                </li>
+                                <li>
+                                    <a href="{{ path_for('billinghistory')}}">Billing history</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown" id="extras">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Extras <span class="caret"></span></a>
+                            <ul class="dropdown-menu" id="extras-menu">
+                                <li>
+                                    <a href="{{ path_for('rewards')}}">Rewards</a>
+                                </li>
+                                <li>
+                                    <a href="{{ path_for('apikeys')}}">API keys</a>
+                                </li>
+                                <li><a href="{{ path_for('registeredapps')}}">Registered apps</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="{{ path_for('transactional')}}">Transactional</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="inside-content">
+                    <div class="row lastunit">
+                        <div class="content h2">
+                            <h2 style="text-align:left"> API keys </h2>
+                        </div>
+                    </div>
+                    <div class="row col-sm-12" style="margin-bottom: 30px;">
+                        <div class="col-sm-6">
+                            <div class="content h3">
+                                <h3> About the API </h3>
+                            </div>
+                            <p>The MailChimp API makes it easy for programmers to integrate MailChimp's features into other applications.</p>
+                            <input type="button" class="btn btn-default" id="register-btn" value="Read the API Documentation">  
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="content h3">
+                                <h3> Developing an app? </h3>
+                            </div>
+                            <p>Writing your own application that requires access to other MailChimp users' accounts? Check out our <a href="#">OAuth2 API documentation</a>, then register your app.</p>
+                            <input type="button" class="btn btn-default" id="register-btn" value="Register And Manage Your Apps">  
+                        </div>
+                    </div>
+                    <div class="row lastunit">
+                        <div class="content h3">
+                            <h3> Your API keys</h3>
+                        </div>
+                        <p>API keys provide full access to your MailChimp account, so keep them safe. <a href="#">Tips on keeping API keys secure</a>.</p>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12 bg-white">                  
+                            <div class="row bg-white-content">
+                                <div class="up-image-content">
+                                    <img src="../../../../../reactmechanics/media/img/goose-egg.svg">
+                                </div>
+                                <div class="up-text-content">
+                                    <p>You don't have any active API keys.</p><br>
+                                </div>
+                                <input type="button" class="btn btn-default" id="c-btn" value="Create A Key">
+                                <input type="button" class="btn btn-default" id="api-btn" value="Create A Mandrill API Key"> 
+                             </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="content h3">
+                            <h3>Authorized applications</h3>
+                        </div>
+                        <div class="col-sm-12 bg-white">                  
+                            <div class="row bg-white-content">
+                                <div class="up-image-content">
+                                    <img src="../../../../../reactmechanics/media/img/goose-egg.svg">
+                                </div>
+                                <div class="up-text-content">
+                                    <p>You have no applications authorized just yet.</p><br>
+                                </div>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+                <footer>    
+                 
+                </footer>
+            </div>
+        </div>
+    </body>
+{% endblock %}

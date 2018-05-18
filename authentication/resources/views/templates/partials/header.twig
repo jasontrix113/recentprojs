@@ -1,0 +1,77 @@
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    
+    <link rel="stylesheet" type="text/css" href="../../../../../reactmechanics/media/css/style.css">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> 
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css">
+</head>
+<link href="../plugins/jquery-plugin-circliful-master/css/jquery.circliful.css" rel="stylesheet" type="text/css" />
+<header>
+     <nav>
+        <div class="navbar navbar-default navbar-fixed-top" id="navigation" role="navigation">
+            <div class="navbar-header">
+                    <button type="button" onclick="openNav()" class="navbar-toggle collapsed" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span><i class="fa fa-bars fa-2x" aria-hidden="true"></i></span>
+                    </button>
+                <a class="navbar-brand" href="{{ path_for('dashboard')}}"><img src="../../../../../../reactmechanics/media/img/reactmechanicsbrandlogo.png" alt="brand"></a>
+                <div id="Sidenav" class="sidenav">
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                    <div class="first-group">
+                        <li><a href="{{ path_for('campaigns')}}"> Campaigns </a></li>
+                        <li><a href="{{ path_for('createproject')}}"> Projects </a></li>
+                        <li><a href="{{ path_for('templates')}}"> Templates </a></li>
+                        <li><a href="{{ path_for('contact')}}"> Contacts </a></li>
+                        <li><a href="{{ path_for('reports')}}"> Reports </a></li>
+                    </div>
+                    <hr>
+                    <div class="last-group">
+                        <li style="text-align:left;"><img class="avatar" src="https://secure.gravatar.com/avatar/7a86dd8aec4f7ece3df78f759f982539.jpg?s=300&amp;d=https%3A%2F%2Fcdn-images.mailchimp.com%2Ficons%2Fletter-avatars%2Fj.png"> 
+                        <span>{{auth.user.firstname}}</span></li>
+                        <li><a href="#" id="first-item">Notifications</a></li>
+                        <li><a href="{{ path_for('profile')}}" id="second-item">Profile</a></li>
+                        <li><a href="{{ path_for('overview')}}" id="third-item">Account</a></li>
+                        <li><a href="{{ path_for('auth.signout')}}">Logout</a></li>
+                    </div>
+                </div>
+            </div>
+            <div class="collapse navbar-collapse" id="collapse">
+                <ul class="nav navbar-nav">         
+                    <li><a href="{{ path_for('campaigns')}}"> Campaigns </a></li>
+                    <li><a href="{{ path_for('createproject')}}"> Projects </a></li>
+                    <li><a href="{{ path_for('templates')}}"> Templates </a></li>
+                    <li><a href="{{ path_for('contact')}}"> Contacts </a></li>
+                    <li><a href="{{ path_for('reports')}}"> Reports </a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown" role="presentation">
+                        <a href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <img class="avatar" src="https://secure.gravatar.com/avatar/7a86dd8aec4f7ece3df78f759f982539.jpg?s=300&amp;d=https%3A%2F%2Fcdn-images.mailchimp.com%2Ficons%2Fletter-avatars%2Fj.png"> {{auth.user.firstname}} <span class="caret"></span></a>      
+                        <ul class="dropdown-menu" id="menu-items">
+                            <li><a href="#" id="first-item">Notifications</a></li>
+                            <li><a href="{{ path_for('profile')}}" id="second-item">Profile</a></li>
+                            <li><a href="{{ path_for('overview')}}" id="third-item">Account</a></li>
+                            <li><a href="{{ path_for('auth.signout')}}" id="last-item">Logout</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#" id="help"> Help </a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script>
+        function openNav() {
+            document.getElementById("Sidenav").style.width = "100%";
+         
+            document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+        }
+        function closeNav() {
+            document.getElementById("Sidenav").style.width = "0";
+           
+            document.body.style.backgroundColor = "white";
+        }
+    </script>

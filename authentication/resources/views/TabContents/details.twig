@@ -1,0 +1,196 @@
+{% extends 'templates/tabcontents/detailsApp.twig' %}
+{% block wrap %}
+    <body id="content">
+        <div id="wrap">
+            <div class="main content">
+                <div class="row list"> 
+                    <div class="list h1">
+                        <h1>{{auth.user.firstname}}</h1>
+                    </div>
+                </div>
+                <div class="row" id="profile">
+                    <ul class="nav nav-tabs" role="tablist" id="profile-tabs">
+                        <li>
+                             <a href="{{ path_for('overview')}}">Overview</a>
+                        </li>
+                        <li class="dropdown" id="settings">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Settings <span class="caret"></span></a>
+                            <ul class="dropdown-menu" id="settings-menu">
+                                <li id="details-menu">
+                                    <a href="{{ path_for('details')}}">Details</a>
+                                </li>
+                                <li id="users-menu">
+                                    <a href="{{ path_for('users')}}">Users</a>
+                                </li>
+                                <li>
+                                    <a href="{{ path_for('security')}}">Security</a>
+                                </li>
+                                <li><a href="{{ path_for('contactinfo')}}">Contact information</a></li>
+                                <li id="verified-menu">
+                                    <a href="{{ path_for('verifieddomains')}}">Verified domains</a>
+                                </li>
+                                <li id="manage-menu">
+                                    <a href="{{ path_for('manage')}}">Manage my data</a>
+                                </li>
+                                <li><a href="#pause">Pause or delete data</a></li>
+                                <li><a href="{{ path_for('auth.password.change') }}">Change password </a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown" id="billing">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Billing <span class="caret"></span></a>
+                            <ul class="dropdown-menu" id="billing-menu">
+                                <li><a href="#">Monthly plans or credits</a></li>
+                                <li>
+                                    <a href="{{ path_for('billinginfo')}}">Billing information</a>
+                                </li>
+                                <li>
+                                    <a href="{{ path_for('billinghistory')}}">Billing history</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown" id="extras">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Extras <span class="caret"></span></a>
+                            <ul class="dropdown-menu" id="extras-menu">
+                                <li>
+                                    <a href="{{ path_for('rewards')}}">Rewards</a>
+                                </li>
+                                <li>
+                                    <a href="{{ path_for('apikeys')}}">API keys</a>
+                                </li>
+                                <li><a href="{{ path_for('registeredapps')}}">Registered apps</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="{{ path_for('transactional')}}">Transactional</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="inside-content">
+                            <div class="row">
+                                <div class="content h3">
+                                    <h3> Details </h3>
+                                </div>
+                                <div class="list-form3">
+                                    <label for="accountname">Account name </label>
+                                    <input type="text" class="form-control" name="accountname">
+                                    <label for="timezone"> Time zone </label>
+                                    <select name="timezone" id="timezone">
+                                        <option value="00">(GMT +12:00) Tarawa</option>
+                                        <option value="01">(GMT +12:00) New Zealand Time</option>
+                                        <option value="02">(GMT +11:00) Norfolk Island (Austl.)</option>
+                                        <option value="03">(GMT +11:00) Noumea, New Caledonia</option>
+                                        <option value="04">(GMT +10:00) Australian Eastern Time (Sydney)</option>
+                                        <option value="05">(GMT +10:00) Australian Eastern Time (Queensland)</option>
+                                        <option value="06">(GMT +9:30) Australian Central Time (Adelaide)</option>
+                                        <option value="07">(GMT +9:30) Australian Central Time (Northern Territory)</option>
+                                        <option value="08">(GMT +9:00) Tokyo</option>
+                                        <option value="09">(GMT +8:00) Australian Western Time</option>
+                                        <option value="10">(GMT +8:00) Hong Kong</option>
+                                        <option value="11">(GMT +7:00) Thailand (Bangkok)</option>
+                                        <option value="12">(GMT +7:00) Western Indonesian Time (Jakarta)</option>
+                                        <option value="13">(GMT +6:00) Bangladesh (Dhaka)</option>
+                                        <option value="14">(GMT +5:30) India</option>
+                                        <option value="15">(GMT +4:30) Afghanistan (Kabul)</option>
+                                        <option value="16">(GMT +5:00) Uzbekistan (Tashkent)</option>
+                                        <option value="17">(GMT +4:00) UAE (Dubai)</option>
+                                        <option value="18">(GMT +3:00) Moscow</option>
+                                        <option value="19">(GMT +4:30) Tehran</option>
+                                        <option value="20">(GMT +3:00) Djibouti</option>
+                                        <option value="21">(GMT +3:00) Minsk</option>
+                                        <option value="22">(GMT +2:00) Cairo</option>
+                                        <option value="23">(GMT +2:00) Eastern European Time</option>
+                                        <option value="24">(GMT +1:00) Central European Time</option>
+                                        <option value="25">(GMT 0:00) Western European Time</option>
+                                        <option value="26">(GMT +1:00) Western European Time (Lisbon)</option>
+                                        <option value="27">(GMT +1:00) British Time (London)</option>
+                                        <option value="28">(GMT 0:00) Greenwich Mean Time</option>
+                                        <option value="29">(GMT 0:00) Western European Time (Iceland)</option>
+                                        <option value="30">(GMT 0:00) Eastern Greenland Time</option>
+                                        <option value="31">(GMT -3:00) Eastern Brazil</option>
+                                        <option value="32">(GMT -2:00) Central Greenland Time</option>
+                                        <option value="33">(GMT -3:00) Western Greenland Time</option>
+                                        <option value="34">(GMT -2:30) NewFoundland Time</option>
+                                        <option value="35">(GMT -3:00) Buenos Aires</option>
+                                        <option value="36">(GMT -3:00) Atlantic Time (Bermuda)</option>
+                                        <option value="37">(GMT -4:00) Atlantic Time</option>
+                                        <option value="38">(GMT -4:30) Venezuelan Standard Time</option>
+                                        <option value="39">(GMT -4:00) Eastern Time</option>
+                                        <option value="40">(GMT -4:00) Eastern Time (Indiana)</option>
+                                        <option value="41">(GMT -5:00) Central Time</option>
+                                        <option value="42">(GMT -5:00) Central Time (Mexico City, Monterrey)</option>
+                                        <option value="43">(GMT -6:00) Central Time (Saskatchewan)</option>
+                                        <option value="44">(GMT -6:00) Mountain Time</option>
+                                        <option value="45">(GMT -7:00) Mountain Time (Arizona)</option>
+                                        <option value="46">(GMT -7:00) Pacific Time</option>
+                                        <option value="47">(GMT -8:00) Alaska Time</option>
+                                        <option value="48">(GMT -10:00) Hawaiian/Aleutian Time</option>
+                                    </select>
+                                    <div class="mid-text">When you schedule campaigns, we'll use this time zone as a reference.</div>
+                                    <label for="currency">Currency format</label>
+                                    <select name="currency" id="currency">
+                                        <option value="00">1,234.56</option>
+                                        <option value="01">1.234,56</option>
+                                        <option value="02">1 234,56</option>
+                                    </select><br>
+                                    <button type="button" class="btn btn-default" id="save-btn"> Save </button>
+                                </div>
+                            </div>
+                            <div class="row lastunit">
+                                <div class="content h3">
+                                    <h3> React Mechanics for Agencies </h3>
+                                </div>
+                                <p class="bottom-text">Do you help other organizations use React Mechanics? As an <a href="#">agency</a>, you can manage multiple clients and invite collaborators to your account!</p>
+                                <button type="button" class="btn btn-default" id="save-btn"> Save </button>
+                            </div>
+                            <div class="row lastunit">
+                                <div class="content h3">
+                                    <h3> Help us improve stats </h3>
+                                </div>
+                                <p>We use this info to run stats like, "average open rates for non-profits" or "best day to send emails for restaurants." Help us and fellow MailChimp users get really useful data. We keep it all anonymous.</p>
+                                <label for="industry">Your industry</label>
+                                <select name="industry" id="industry">
+                                    <option value="00">Please specify...</option>
+                                    <option value="00">Agriculture and Food Services</option>
+                                    <option value="00">Architecture and Construction</option>
+                                    <option value="00">Arts and Artists</option>
+                                    <option value="00">Beauty and Personal Care</option>
+                                    <option value="00">Business and Finance</option>
+                                </select>
+                                <label for="quantity"> How many people are in your organization?</label>
+                                <select name="quantity" id="quantity">
+                                    <option value="00">Select</option>
+                                    <option value="00">1-5</option>
+                                    <option value="00">6-10</option>
+                                    <option value="00">11-20</option>
+                                    <option value="00">21-50</option>
+                                    <option value="00">51-100</option>
+                                    <option value="00">101-150</option>
+                                    <option value="00">150-300</option>
+                                </select>
+                                <label for="org-year">How old is your organization?</label>
+                                <select name="org-year" id="org-year">
+                                    <option value="00"><span role="option">&lt; 1 year</span></option>
+                                    <option value="00">1-2 years</option>
+                                    <option value="00">3-5 years</option>
+                                    <option value="00">6-10 years</option>
+                                    <option value="00">11+ years</option>
+                                </select>
+                                <br>
+                                <button type="button" class="btn btn-default" id="save-btn"> Save </button>
+                            </div>
+                            <div class="row lastunit">
+                                <div class="content h3">
+                                    <h3> Email from React Mechanics </h3>
+                                </div>
+                                <p>I'd like to receive the following emails:</p>
+                                <p class="bottom-text"><a href="#">See past issues of our newsletters</a></p>
+                                <button type="button" class="btn btn-default" id="save-btn"> Save </button>
+                            </div>
+                        </div>
+                <footer>    
+                    
+                </footer>
+            </div>
+        </div>
+    </body>
+{% endblock %}

@@ -1,0 +1,8 @@
+{% extends 'templates/app.twig' %}
+
+{% block content %}
+    <div class="row" style="font-size: 20px;">
+        <a href="{{ path_for('auth.signup')}}" name="signup">Signup </a>
+        <a href="{{ path_for('auth.signin')}}" name="login" style="margin-left: 20px;">Login </a>
+    </div>
+{% endblock %}

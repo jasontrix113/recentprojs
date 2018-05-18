@@ -1,0 +1,119 @@
+{% extends 'templates/tabcontents/billinginfoApp.twig' %}
+{% block wrap %}
+    <body id="content">
+        <div id="wrap">
+            <div class="main content">
+                <div class="row list"> 
+                    <div class="list h1">
+                        <h1>{{auth.user.firstname}}</h1>
+                    </div>
+                </div>
+               <div class="row" id="profile">
+                    <ul class="nav nav-tabs" role="tablist" id="profile-tabs">
+                        <li>
+                             <a href="{{ path_for('overview')}}">Overview</a>
+                        </li>
+                        <li class="dropdown" id="settings">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Settings <span class="caret"></span></a>
+                            <ul class="dropdown-menu" id="settings-menu">
+                                <li id="details-menu">
+                                    <a href="{{ path_for('details')}}">Details</a>
+                                </li>
+                                <li id="users-menu">
+                                    <a href="{{ path_for('users')}}">Users</a>
+                                </li>
+                                <li>
+                                    <a href="{{ path_for('security')}}">Security</a>
+                                </li>
+                                <li><a href="{{ path_for('contactinfo')}}">Contact information</a></li>
+                                <li id="verified-menu">
+                                    <a href="{{ path_for('verifieddomains')}}">Verified domains</a>
+                                </li>
+                                <li id="manage-menu">
+                                    <a href="{{ path_for('manage')}}">Manage my data</a>
+                                </li>
+                                <li><a href="#pause">Pause or delete data</a></li>
+                                <li><a href="{{ path_for('auth.password.change') }}">Change password </a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown" id="billing">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Billing <span class="caret"></span></a>
+                            <ul class="dropdown-menu" id="billing-menu">
+                                <li><a href="#">Monthly plans or credits</a></li>
+                                <li>
+                                    <a href="{{ path_for('billinginfo')}}">Billing information</a>
+                                </li>
+                                <li>
+                                    <a href="{{ path_for('billinghistory')}}">Billing history</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown" id="extras">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Extras <span class="caret"></span></a>
+                            <ul class="dropdown-menu" id="extras-menu">
+                                <li>
+                                    <a href="{{ path_for('rewards')}}">Rewards</a>
+                                </li>
+                                <li>
+                                    <a href="{{ path_for('apikeys')}}">API keys</a>
+                                </li>
+                                <li><a href="{{ path_for('registeredapps')}}">Registered apps</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="{{ path_for('transactional')}}">Transactional</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="inside-content">
+                    <div class="row">
+                        <div class="content h2" style="margin-bottom: 30px;">
+                            <h2 style="text-align:left">Billing information</h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                       <div class="col-sm-12 bg-white">                  
+                            <div class="row bg-white-content">
+                                <div class="up-image-content">
+                                    <img src="../../../../../reactmechanics/media/img/no-sales.svg">
+                                </div>
+                                <div class="up-text-content">
+                                     <h2> Looks like you don't have a payment method on file </h2>
+                                     <br>
+                                    <input type="button" class="btn btn-default" id="add-btn" value="Add A Payment Method" style="text-align: center;">
+                                </div>
+                             </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="content h3">
+                            <h3>Currency</h3>
+                        </div>
+                        <div class="content currency">
+                            <select name="currency" id="currency"> 
+                                <option value="us" selected="">$ US Dollars</option>
+                                <option value="euro">€ Euros</option>
+                                <option value="pound">£ British Pounds</option>
+                                <option value="aud">A$ Australian Dollar</option>
+                                <option value="inr">₹ Indian Rupee</option>
+                                <option value="nzd">NZ$ New Zealand Dollar</option>
+                                <option value="brl">R$ Brazilian Real</option>
+                                <option value="dkk">kr Danish Krone</option>
+                                <option value="sek">kr Swedish Krona</option>
+                                <option value="sgd">S$ Singapore Dollar</option>
+                                <option value="zar">R South African Rand</option>
+                                <option value="chf">Fr Swiss Franc</option>
+                                <option value="mxn">M$ Mexican Peso</option>
+                                <option value="cad">C$ Canadian Dollar</option>
+                                <option value="hkd">HK$ Hong Kong Dollar</option>
+                                <option value="jpy">¥ Japanese Yen</option> 
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <footer>    
+                </footer>
+            </div>
+        </div>
+    </body>
+{% endblock %}

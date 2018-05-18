@@ -1,0 +1,70 @@
+{% extends 'templates/indexApp.twig' %}
+{%  block wrap %}
+<body style="padding:0;">
+    <title>Login</title>   
+    <div class="login-content">
+        <div id="login-form" style="margin:0; padding: 0;">
+            <div class="col-sm-6" id="react-login-bg">
+                <div class="react-login">
+                    <img src="../../../../../reactmechanics/media/img/reactmechanicslogo3.png">
+                </div>    
+            </div>
+            <div class="col-sm-6" style="padding: 50px 70px;">
+                {% include 'templates/partials/flash.twig' %}  
+                <br>
+                <div class="h1">
+                    <h1 style="text-align:center;"> <b>Log in</b> </h1>
+                </div>
+                
+                <br>
+                <br>
+                <form action="" method="POST">
+                    <label for="email"> Email or Username </label>
+                    <input type="text" class="form-control" id="email" name="email" tabindex="1" value="{{ old.email }}">
+                    <label for="password"> Password<a href="" class="show" id="show" onclick="return show()"><span id="show_eye" class="fa fa-eye" ></span> Show </a></label>
+                    <input type="password" class="form-control" name="password" id="password" tabindex="2" value="{{ old.password }}"><br><br>
+                    <input type="submit" class="btn btn-default btn-block" id="login-btn" value="Log in" tabindex="3"><br>   
+                    <div class="col-sm-6">
+                        <div class="lcheckbox-group"> 
+                            <label class="checkbox" for="keepmelogin"> 
+                                <div class="av-checkbox" role="presentation" tabindex="4">
+                                    <input type='checkbox' name='keepmelogin' value='valuable' id="keepmelogin">
+                                    <label for="keepmelogin"></label>
+                                </div>
+                                <div class="checkbox-description"> 
+                                    Keep me logged in
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="FUFP">
+                            <a href="#" tabindex="6">Forgot password?</a>
+                        </div>      
+                    </div>
+                    <br>  
+                </form>   
+                <br>
+                <br>
+                    <p class="p1"> Need an account? <a href="{{ path_for('auth.signup')}}"> Create an account </a></p>
+            </div>
+        </div>
+     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="../plugins/bootstrap-show-password-master/bootstrap-show-password.min.js"></script>
+    <script type="text/javascript">
+        function show()
+            {
+            if( $("#password").attr("type") == "password" ){
+                $("#password").attr("type", "text");
+                $("#show_eye").attr("class", "fa fa-eye-slash");
+            }else{
+                $("#password").attr("type", "password");
+                $("#show_eye").attr("class", "fa fa-eye");
+            }      
+                return false;
+            }
+    </script>
+</body>
+{% endblock %}

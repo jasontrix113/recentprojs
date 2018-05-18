@@ -1,0 +1,50 @@
+{% extends 'templates/tabcontents/apikeysApp.twig' %}
+{%  block wrap %}
+<body>
+    <title>Change Password</title>   
+    <div class="login-content">
+        <div id="change-form ">
+            <div class="panel panel-default" style="max-width: 100%; width: 500px; padding: 20px; margin:0 auto;">
+                <div class="h1 panel-header">
+                    <h1 style="text-align:center;"> Change Password </h1>
+                </div>
+                <br>
+                <form action="{{ auth.password.change }}" method="post"> 
+                    <div class="form-group {{ errors.password_old ? ' has-error':' '}}">
+                        <label for="password_old">Current Password</label>
+                        <input type="password" class="form-control" id="old_password" name="password_old">
+                        {% if errors.password_old %}
+                        <span class="help-block">{{ errors.password_old | first }}</span>
+                        {% endif %}
+                    </div>
+                    <div class="form-group {{ errors.password ? ' has-error':' '}}">
+                        <label for="password">New Password<a href="" class="show" id="s_show" onclick="return show()"><span id="show_eye" class="fa fa-eye" ></span> Show </a></label>
+                        <input type="password" class="form-control" id="s_password" name="password" value="{{ old.password }}">
+                        {% if errors.password %}
+                        <span class="help-block">{{ errors.password | first }}</span>
+                        {% endif %}
+                    </div>
+                    <br>
+                    <input type="submit" class="btn btn-default btn-block" id="signup-btn" value="Change Password"><br>
+                </form>
+            </div>
+        </div>
+     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="../plugins/bootstrap-show-password-master/bootstrap-show-password.min.js"></script>
+    <script type="text/javascript">
+        function show()
+            {
+            if( $("#s_password").attr("type") == "password" ){
+                $("#s_password").attr("type", "text");
+                $("#show_eye").attr("class", "fa fa-eye-slash");
+            }else{
+                $("#s_password").attr("type", "password");
+                $("#show_eye").attr("class", "fa fa-eye");
+            }      
+                return false;
+            }
+    </script>
+</body>
+{% endblock %}

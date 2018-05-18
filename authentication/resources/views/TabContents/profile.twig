@@ -1,0 +1,179 @@
+{% extends 'templates/tabcontents/profileApp.twig' %}
+{% block wrap %}
+<body id="content">
+        <div id="wrap">
+            <div class="main content">
+                <div class="row" id="profile-header"> 
+                    <div class="list h1">
+                        <h1>{{auth.user.firstname}}</h1>
+                    </div>
+                </div>
+                    <div class="row" id="profile">
+                        <ul class="nav nav-tabs" role="tablist" id="profile-tabs">
+                            <li>
+                                 <a href="{{ path_for('overview')}}">Overview</a>
+                            </li>
+                            <li class="dropdown" id="settings">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Settings <span class="caret"></span></a>
+                                <ul class="dropdown-menu" id="settings-menu">
+                                    <li id="details-menu">
+                                        <a href="{{ path_for('details')}}">Details</a>
+                                    </li>
+                                    <li id="users-menu">
+                                        <a href="{{ path_for('users')}}">Users</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ path_for('security')}}">Security</a>
+                                    </li>
+                                    <li><a href="{{ path_for('contactinfo')}}">Contact information</a></li>
+                                    <li id="verified-menu">
+                                        <a href="{{ path_for('verifieddomains')}}">Verified domains</a>
+                                    </li>
+                                    <li id="manage-menu">
+                                        <a href="{{ path_for('manage')}}">Manage my data</a>
+                                    </li>
+                                    <li><a href="#pause">Pause or delete data</a></li>
+                                    <li><a href="{{ path_for('auth.password.change') }}">Change password </a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown" id="billing">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Billing <span class="caret"></span></a>
+                                <ul class="dropdown-menu" id="billing-menu">
+                                    <li><a href="#">Monthly plans or credits</a></li>
+                                    <li>
+                                        <a href="{{ path_for('billinginfo')}}">Billing information</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ path_for('billinghistory')}}">Billing history</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown" id="extras">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Extras <span class="caret"></span></a>
+                                <ul class="dropdown-menu" id="extras-menu">
+                                    <li>
+                                        <a href="{{ path_for('rewards')}}">Rewards</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ path_for('apikeys')}}">API keys</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ path_for('registeredapps')}}">Registered apps</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="{{ path_for('transactional')}}">Transactional</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="row" id="content-media">
+                        <div class="content h3">
+                            <h3>Profile photo</h3>
+                        </div>
+                        <div class="content media">
+                            <div class="profile-avatar">
+                                <img src="https://secure.gravatar.com/avatar/7a86dd8aec4f7ece3df78f759f982539.jpg?s=300&amp;d=https%3A%2F%2Fcdn-images.mailchimp.com%2Ficons%2Fletter-avatars%2Fj.png">
+                            </div>
+                            <div class="media-body2">
+                                <h4>Upload your photo</h4>
+                                <p>Photo should be should be atleast 300px x 300px</p>
+                                <form method="post">
+                                     <input type="button" class="btn btn-default" value="Upload Photo" id="upload-btn">
+                                     <input type="button" class="btn btn-default" id="take-btn" value="Take A Photo!" style="margin-left: 15px;">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12" id="security-form">
+                        <div class="security-form col-sm-6">
+                            <div class="row">
+                                <form>
+                                    <div class="content h3">
+                                        <h3>Basic Information</h3>
+                                    </div>
+                                    <div class="list-form2">
+                                        <label for="username">Username</label>
+                                        <input type="text" class="form-control" name="username">
+                                        <label for="firstname">First name</label>
+                                        <input type="text" class="form-control" name="firstname">
+                                        <label for="lastname">Last name</label>
+                                        <input type="text" class="form-control" name="lastname">
+                                        <label for="email">Email address</label>
+                                        <input type="text" class="form-control" name="email">
+                                    </div>
+                                    <input type="submit" class="btn btn-default" id="update-btn" value="Update">
+                                </form>
+                            </div>
+                        </div>
+                        <div class="security-form col-sm-6">
+                            <div class="row">
+                                <form>
+                                    <div class="content h3">
+                                        <h3>Change password</h3>
+                                    </div>
+                                    <div class="list-form2">
+                                        <label for="ver-cur-pass">Verify current password</label>
+                                        <input type="text" class="form-control" name="ver-cur-pass">
+                                        <label for="new-pass">New password</label>
+                                        <input type="text" class="form-control" name="new-pass">
+                                        <div class="row">
+                                            <div style="float:left;" id="pass-req1">
+                                                <ul>
+                                                    <li>one lowercase character</li>
+                                                    <li>one uppercase character</li>
+                                                    <li>one number</li>
+                                                </ul>
+                                            </div>
+                                            <div style="float:right;" id="pass-req2">
+                                                <ul>
+                                                    <li>one special character</li>
+                                                    <li>8 characters minimum</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <label for="confirm-pass">Confirm new password</label>
+                                        <input type="text" class="form-control" name="confirm-pass">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" id="last-unit">
+                        <div class="lastunit">
+                            <div class="content h3">
+                                <h3>Connections and notifications </h3>
+                                <p> 
+                                    If you're the admin or owner of an account, enable notifications to receive updates when a change is made to the account.  
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" id="last-unit-table">
+                        <div class="content table">
+                            <div class="table-responsive">
+                                <table class="mc-table">
+                                    <tr id="table-header">
+                                        <td>Account name</td>
+                                        <td>User type</td>
+                                        <td>Security notifications <span class="fa fa-exclamation-circle"></span><span> info</span></td>
+                                        <td>Login notifications <span class="fa fa-exclamation-circle"></span><span> info</span></td>
+                                    </tr>     
+                                    <tr>
+                                        <td>Web App <span class="badge info" style="background-color:lightblue;">Current</span></td>
+                                        <td>Owner</td>
+                                        <td>SMS Email</td>
+                                        <td>SMS Email</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <input type="submit" class="btn btn-default" id="update-btn" value="Update">
+                    </div>
+                <hr>
+            <footer>    
+            </footer>
+        </div>
+    </div>
+</body>
+{% endblock %}

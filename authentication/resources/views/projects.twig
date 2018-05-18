@@ -1,0 +1,66 @@
+{% extends 'templates/projectsApp.twig' %}
+{% block wrap %}
+    <div id="wrap">
+        <div class="main content">
+            <div class="row list"> 
+                <div class="list h1">
+                    <h1>Projects</h1>
+                </div>
+            </div>
+            <div class="row list-content">
+                <div class="list h3">
+                    <h3>Project details</h3>
+                </div>
+                <form method="post">
+                    <div class="list-form">
+                        <div class="form-group"></div>
+                        <label for="list-name">Project name</label>
+                        <input type="text" name="project_name" class="form-control" style="color: #484848;">
+                        <br>
+                        <select id="multiple-checkboxes" multiple="multiple" name="proj_contactlist">
+                            <option value="Juan">Juan</option>
+                            <option value="Anna">Anna</option>
+                            <option value="Maria">Maria</option>
+                            <option value="Ricardo">Ricardo</option>
+                            <option value="Jacob">Jacob</option>
+                            <option value="Lucy">Lucy</option>
+                        </select>
+                        <div class="list h3">
+                            <h3>Contact</h3>
+                        </div>
+                        <label for="contact-name">Name</label>
+                        <input type="text" name="proj_contactName" class="form-control">
+                        <label for="contact-name">Email</label>
+                        <input type="text" name="proj_contactEmail" class="form-control"><br>
+                        <div class="list h3">
+                            <h3>Main Contact</h3>
+                        </div>
+                        <label for="mn-name">Name</label>
+                        <input type="text" name="proj_mcontactName" class="form-control">
+                        <label for="mn-email">Email</label>
+                        <input type="text" name="proj_mcontactEmail" class="form-control">
+                        <label for="mn-phone">Phone</label>
+                        <input type="text" name="proj_mcontactPhone" class="form-control">
+                        <label for="mn-company">Company</label>
+                        <input type="text" name="proj_mcontactCompany" class="form-control"><br>
+                        <input type="submit" name="sumit-btn" class="btn btn-default btn-block" id="save-btn" value="Submit"> 
+                    </div>     
+                </form>
+                
+            <hr>
+            <footer>
+            </footer>
+        </div>
+        <script type="text/javascript">
+            $(document).ready(function() {
+            $('#multiple-checkboxes').multiselect({
+                includeSelectAllOption: true,
+                nonSelectedText: 'Contact Lists'
+            });
+
+            });
+
+        </script>
+        </div>
+    </div>
+{% endblock %}

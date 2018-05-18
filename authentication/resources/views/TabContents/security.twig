@@ -1,0 +1,119 @@
+{% extends 'templates/tabcontents/securityApp.twig' %}
+{% block wrap %}
+    <body id="content">
+        <div id="wrap">
+            <div class="main content">
+                <div class="row list"> 
+                    <div class="list h1">
+                        <h1>{{auth.user.firstname}}</h1>
+                    </div>
+                </div>
+               <div class="row" id="profile">
+                    <ul class="nav nav-tabs" role="tablist" id="profile-tabs">
+                        <li>
+                             <a href="{{ path_for('overview')}}">Overview</a>
+                        </li>
+                        <li class="dropdown" id="settings">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Settings <span class="caret"></span></a>
+                            <ul class="dropdown-menu" id="settings-menu">
+                                <li id="details-menu">
+                                    <a href="{{ path_for('details')}}">Details</a>
+                                </li>
+                                <li id="users-menu">
+                                    <a href="{{ path_for('users')}}">Users</a>
+                                </li>
+                                <li>
+                                    <a href="{{ path_for('security')}}">Security</a>
+                                </li>
+                                <li><a href="{{ path_for('contactinfo')}}">Contact information</a></li>
+                                <li id="verified-menu">
+                                    <a href="{{ path_for('verifieddomains')}}">Verified domains</a>
+                                </li>
+                                <li id="manage-menu">
+                                    <a href="{{ path_for('manage')}}">Manage my data</a>
+                                </li>
+                                <li><a href="#pause">Pause or delete data</a></li>
+                                <li><a href="{{ path_for('auth.password.change') }}">Change password</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown" id="billing">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Billing <span class="caret"></span></a>
+                            <ul class="dropdown-menu" id="billing-menu">
+                                <li><a href="#">Monthly plans or credits</a></li>
+                                <li>
+                                    <a href="{{ path_for('billinginfo')}}">Billing information</a>
+                                </li>
+                                <li>
+                                    <a href="{{ path_for('billinghistory')}}">Billing history</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown" id="extras">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Extras <span class="caret"></span></a>
+                            <ul class="dropdown-menu" id="extras-menu">
+                                <li>
+                                    <a href="{{ path_for('rewards')}}">Rewards</a>
+                                </li>
+                                <li>
+                                    <a href="{{ path_for('apikeys')}}">API keys</a>
+                                </li>
+                                <li><a href="{{ path_for('registeredapps')}}">Registered apps</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="{{ path_for('transactional')}}">Transactional</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="inside-content">
+                    <div class="row">
+                       <div class="content h2">
+                            <h2 style="text-align:left;">Account Security</h2>
+                       </div>
+                    </div>
+                    <div class="row lastunit">
+                        <div class="content h3">
+                            <h3>Two-factor authentication</h3>
+                        </div>
+                        <p>Two-factor authentication is a security process where the user provides two forms of ID to log in to MailChimp. It helps keep your account safe, which is why we give you a 10% discount for using it. There are two ways to use two-factor authentication with MailChimp: use an authenticator app, or enable SMS account verification.</p>
+                        <div class="content h4">
+                            <h4>Verify identity via an authenticator app</h4>
+                        </div>
+                        <p>MailChimp integrates with <a href="#">Google Authenticator</a> and other mobile apps for two-factor authentication.</p>
+                        <input type="button" class="btn btn-default" id="enable-btn" value="Enable">
+                    </div>
+                    <div class="row lastunit">
+                        <div class="content h4">
+                            <h4>Verify identity via SMS</h4>
+                        </div>
+                        <p>MailChimp can also verify your identity with an SMS message to provide two-factor authentication.</p>
+                        <input type="button" class="btn btn-default" id="enable-btn" value="Enable">
+                    </div>
+                    <div class="row lastunit">
+                        <div class="content h3">
+                            <h3> Account verification</h3>
+                        </div>
+                        <p>If we see patterns that seem unusual for your account, we'll need to verify your identity.</p>
+                        <div class="content h4">
+                            <h4> Verify via SMS </h4>
+                        </div>
+                        <p >Your phone number <b>63 09275131780</b> has been verified via SMS · <a href="#" >Edit</a></p>
+                        <div class="content h4">
+                            <h4>Verify identity with security questions </h4>
+                        </div>
+                        <input type="button" class="btn btn-default" id="enable-btn" value="Enable">
+                    </div>
+                    <div class="row lastunit">
+                        <div class="content h3">
+                            <h3>Data science privacy setting</h3>
+                        </div>
+                        <p>Some MailChimp features, like Discover Similar Subscribers, analyze information from user accounts to provide data-driven predictions and recommendations. Your participation can improve these results and help all customers achieve their email marketing goals.</p>
+                        <p>We make every effort to protect your data in these features, using privacy safeguards where possible and always complying with our <a href="#">Privacy Policy</a>.</p>
+                    </div>
+                </div>
+                <footer>       
+                </footer>
+            </div>
+        </div>
+    </body>
+{% endblock %}

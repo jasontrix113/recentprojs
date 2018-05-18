@@ -1,0 +1,114 @@
+{% extends 'templates/emailApp.twig' %}
+{% block wrap %}
+<html>
+    <link rel="stylesheet" type="text/css" href="../../../../reactmechanics/plugins/sliptree-bootstrap-tokenfield-9c06df4/dist/css/bootstrap-tokenfield.css">
+    <link rel="stylesheet" type="text/css" href="../../../../reactmechanics/plugins/sliptree-bootstrap-tokenfield-9c06df4/dist/css/bootstrap-tokenfield.min.css">
+    <link rel="stylesheet" type="text/css" src="../../../../reactmechanics/plugins/sliptree-bootstrap-tokenfield-9c06df4/dist/css/tokenfield-typeahead.css">
+    <link rel="stylesheet" type="text/css" src="../../../../reactmechanics/plugins/sliptree-bootstrap-tokenfield-9c06df4/dist/css/tokenfield-typeahead.min.css">
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.1/themes/base/jquery-ui.css" type="text/css" media="all"> 
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.4/summernote.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.5.1/css/froala_editor.pkgd.min.css" rel="stylesheet" type="text/css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.5.1/css/froala_style.min.css" rel="stylesheet" type="text/css">
+    <body>
+        <div class="row">
+            <div class="panel panel-default" style="width: 90%; margin: 0 auto; padding: 20px;">
+                <div class="panel-header" style="margin: 30px;">
+                    <h1>Create an Email</h1>
+                </div>
+                <div class="panel-body" id="email-form">
+                    <form action="" method="post">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="contacts">Contact list</label>
+                                <select name="contactlist" id="contacts">
+                                    <option value="jsnjocsin@gmail.com">jsnjocsin@gmail.com</option>
+                                    <option value="Jpskrilljap113@gmail.com">Jpskrillajap113@gmail.com</option>
+                                    <option value="ryngonz@gmail.com">ryngonz@gmail.com</option>
+                                    <option value="contact4@gmail.com">contact4@gmail.com</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="recipients">Recipients</label>
+                                <input type="text" class="form-control" id="tokenfield-typeahead" placeholder="Individual recipients here..." name="recipients">
+                            </div>
+                            <br>
+                            <div class="form-group">
+                                <label for="templates">Templates</label>
+                                <select name="templates" id="templates">
+                                    <option class="selected">Choose a Template</option>
+                                    <option value="Template 1">Template 1</option>
+                                    <option value="Template 2">Template 2</option>
+                                    <option value="Template 3">Template 3</option>
+                                    <option value="Template 4">Template 4</option>
+                                    <option value="Template 5">Template 5</option>
+                                    <option value="Template 6">Template 6</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <input type="text" class="form-control" id="subject" name="subject" style="width: 100%;">
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>   
+                                <textarea id="summernote" name="message"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="form-group" style="margin-top: 20px;">
+                                <input type="submit" class="btn btn-default" value="Submit" id="createemail" style="float: right;">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
+        <!--  <script type="text/javascript" src="../../../../reactmechanics/plugins/sliptree-bootstrap-tokenfield-9c06df4/js/bootstrap-tokenfield.js"></script>-->
+        <script type="text/javascript" src="../../../../reactmechanics/plugins/sliptree-bootstrap-tokenfield-9c06df4/dist/bootstrap-tokenfield.js"> </script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.4/summernote.js"></script> 
+        <script> 
+          $(document).ready(function() {
+              $('#summernote').summernote({
+                  height: 60,
+                  width: '100%',
+              });
+          });
+        </script>
+        <script type="text/javascript">
+            $('#tokenfield-typeahead').tokenfield({
+              autocomplete: {
+                source: ['me@example.com','you@example.com','them@example.com','we@example.com'],
+                delay: 100  
+              },
+              showAutocompleteOnFocus: false
+            })
+            $('#tokenfield-typeahead')
+            .on('tokenfield:createtoken', function (e) {
+            var data = e.attrs.value.split('|')
+            e.attrs.value = data[1] || data[0]
+            e.attrs.label = data[1] ? data[0] + ' (' + data[1] + ')' : data[0]
+            })
+            .on('tokenfield:createdtoken', function (e) {
+            // Über-simplistic e-mail validation
+            var re = /\S+@\S+\.\S+/
+            var valid = re.test(e.attrs.value)
+            if (!valid) {
+              $(e.relatedTarget).addClass('invalid')
+            }
+            })
+            .on('tokenfield:edittoken', function (e) {
+            if (e.attrs.label !== e.attrs.value) {
+              var label = e.attrs.label.split(' (')
+              e.attrs.value = label[0] + '|' + e.attrs.value
+            }
+            })
+            .on('tokenfield:removedtoken', function (e) {
+            alert('Token removed! Token value was: ' + e.attrs.value)
+            })
+            .tokenfield()
+        </script>
+    </body>
+</html>
+{% endblock %}

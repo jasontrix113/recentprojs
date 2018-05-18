@@ -1,0 +1,88 @@
+{% extends 'templates/reportsApp.twig' %}
+{% block wrap %}
+        <div id="wrap">
+            <div class="main-content mc-content">
+                 <div class="row reports"> 
+                    <div class="campaign h1">
+                        <h1>Reports</h1>
+                    </div>
+                </div>
+                <div class="row" style="padding: 25px;">
+                    <ul class="nav nav-tabs" role="tablist" id="reports-tabs">
+                        <li>
+                            <a href="#campaigns" aria-controls="campaigns" id="next" role="tab" data-toggle="tab" autofocus>Campaigns</a>
+                        </li>
+                        <li>
+                            <a href="#comparative" aria-controls="comparative" role="tab" data-toggle="tab">Comparative</a>
+                        </li>
+                        <li>
+                            <a href="#automation" aria-controls="automation" role="tab" data-toggle="tab">Automation</a>
+                        </li>
+                    </ul>
+                </div>           
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active" id="campaigns">
+                        <div class="inside-content">
+                            <div class="row reports-row">
+                                <div class="c-white">                  
+                                    <div class="row c-white-content">
+                                        <div class="c-image-content">
+                                            <span><i class="fa fa-bar-chart-o fa-5x" style="color: #bfe5ff"></i></span>
+                                        </div>
+                                        <div class="c-text-content">
+                                            <h2> No reports yet </h2>
+                                            <br>
+                                            <p> Reports show you how well your <a href="{{ path_for('campaigns')}}">campaigns</a> performed, who opened, and more. You'll need to send a <a href="{{ path_for('campaigns')}}">campaigns</a> first to see reports.</p><br>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="comparative">
+                        <div class="inside-content">
+                            <div class="row comparative-row">
+                                <div class="c-white">                  
+                                    <div class="row c-white-content">
+                                        <div class="c-image-content">
+                                            <img src="../../../../reactmechanics/media/img/freddie_pro.svg">
+                                        </div>
+                                        <div class="c-text-content">
+                                            <h2> Comparative Reports </h2>
+                                            <br>
+                                            <div class="mid-btn">
+                                                <button class="btn btn-default" type="button"> Upgrade To Pro </button> &nbsp;
+                                                <a href="#"> Learn more</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="automation">
+                        <div class="inside-content">
+                            <div class="row automation-row">
+                                <div class="c-white">                  
+                                    <div class="row c-white-content">
+                                        <div class="c-image-content">
+                                            <img src="../../../../reactmechanics/media/img/no-autoresponder.svg">
+                                        </div>  
+                                        <div class="c-text-content">
+                                            <h2> No automation emails have been sent </h2>
+                                            <br>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <footer> 
+                </footer>
+            </div>
+        </div>
+        <script>
+            $("#next").focus();
+        </script>
+{% endblock %}

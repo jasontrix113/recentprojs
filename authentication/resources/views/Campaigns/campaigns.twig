@@ -1,0 +1,76 @@
+{% extends 'templates/campaignsApp.twig' %}
+{% block wrap %}
+    <body>
+        <div id="wrap">
+            <div class="main-content">
+                <div class="row campaigns"> 
+                    <div class="campaign h1">
+                        <h1>Campaigns</h1>
+                    </div>
+                    <div class="create-btn" id="create-btn">
+                        <button class="btn btn-default btn-block" type="button" data-toggle="modal" data-target="#interstitialModal">Create Campaign</button>
+                    </div>
+                </div>
+                <div class="row-content campaign-row">
+                    <div class="c-white">                  
+                        <div class="row c-white-content">
+                            <div class="c-image-content">
+                                <span><i class="fa fa-envelope-o fa-5x" style="color: #bfe5ff"></i></span>
+                            </div>
+                            <div class="c-text-content">
+                                <h2> You haven’t sent any campaigns </h2>
+                                <br>
+                                <p><a href="{{ path_for('campaigns')}}">Campaigns</a> are emails sent to subscribers on a <a href="{{ path_for('contact')}}">contact</a>.
+    Haven’t set up a list yet? No problem. Click “Create Campaign” to design a test campaign and send it to yourself. </p><br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div> 
+        <div class="modal fade" id="interstitialModal" role="dialog" aria-labelledby="interstitialLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <div class="row">
+                                <button style="margin-top: 8px;" type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only text-muted">Close</span></button>  
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="content h1">
+                                <h1> What campaign do you want to create?</h1>
+                            </div>
+                            <div class="modal-img">
+                                <img src="../../../../../reactmechanics/media/img/space-illo.svg">
+                            </div>
+                            <div class="modal-content-text" style="max-width: 600px;">
+                                <p>We know all the shortcuts because we live here! We'll help you find and create the campaigns you need.</p>
+                                <br>
+                                <button type="submit" id="guide-btn">Let us guide you</button>
+                            </div> 
+                        </div>
+                        <div class="row">
+                            <div class="row modal-footer">
+                                <div class="col-sm-6">
+                                    <a tabindex="0" href="{{ path_for('email')}}">
+                                        <img src="../../../../../reactmechanics/media/img/email-illo.svg">
+                                        <div>Create an Email</div>
+                                    </a>
+                                </div>
+                                <div class="col-sm-6">
+                                    <a tabindex="0" href="">
+                                        <img src="../../../../../reactmechanics/media/img/ad-illo.svg">
+                                        <div>Generate Reacts</div>
+                                    </a>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <footer>
+            </footer>
+        </div>    
+    </body>
+{% endblock %}
